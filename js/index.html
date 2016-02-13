@@ -13,10 +13,7 @@
 <body ng-app="ToDo">
   <div ng-controller="todoController">
      <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
-     <form name="frm" ng-submit="addTodo()">
-       <input type="text" name="newtodo" ng-model="newTodo" required /> 
-       <button ng-disable="frm.$invalid" data-ng-submit="addTodo()">Go</button>
-     </form>
+     
      <button ng-click="clearCompleted()">Clear Completed</button>
 
      <ul>
