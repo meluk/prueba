@@ -13,11 +13,3 @@ theApp.config(['$routeProvider', function($routeProvider) {
 		redirectTo :'/list'
 	});
 }]);
-
-
-
-
-
-
-
-
