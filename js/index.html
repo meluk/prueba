@@ -1,0 +1,32 @@
+<!DOTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To Do</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/ngStorage.min.js"></script>
+    <script src="js/logic.js"></script>
+</head>
+<body ng-app="ToDo">
+  <div ng-controller="todoController">
+     <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
+     <form name="frm" ng-submit="addTodo()">
+       <input type="text" name="newtodo" ng-model="newTodo" required /> 
+       <button ng-disable="frm.$invalid" data-ng-submit="addTodo()">Go</button>
+     </form>
+     <button ng-click="clearCompleted()">Clear Completed</button>
+
+     <ul>
+      <li ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.done"/>
+          <span ng-class="{'done' : todo.done}">{{todo.title}}</span>
+      </li>
+     </ul>
+
+  </div>
+
+</body>
+</html>
